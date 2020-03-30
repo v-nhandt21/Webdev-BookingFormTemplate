@@ -1,0 +1,374 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Poppins:700" rel="stylesheet" />
+    <link href="../static/css/main.css" rel="stylesheet" />
+
+
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/themes/redmond/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="../static/js/time/jquery.ptTimeSelect.css" />
+
+    <!--Script for picking time-->
+    <script type="text/javascript" src="../static/js/time/jquery.ptTimeSelect.js"></script>
+  </head>
+  <body>
+    <div class="s012">
+      <form>
+        <fieldset>
+          <legend align="center" style="color: #e5ff00; font-family: Lucida Handwriting; font-weight: bolder; font-size: xx-large;" id="TOUR">SIGHTSEEING TOUR</legend>
+        </fieldset>
+        
+        <div class="inner-form">
+          <!--
+          <header>
+            <div class="travel-type-wrap">
+              <div class="item active">
+                <span></span>
+              </div>
+              <div class="item">
+                <span>HOTEL + FLIGHT</span>
+              </div>
+              <div class="item">
+                <span>HOTEL + FLIGHT + CAR</span>
+              </div>
+              <div class="item">
+                <span>HOTEL + CAR</span>
+              </div>
+            </div>
+          </header>
+        -->
+          <div class="main-form" id="main-form">
+            <div class="row">
+              <div class="input-wrap">
+                <div class="icon-wrap">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path>
+                  </svg>
+                </div>
+                <div class="input-field" id="locationField">
+                  <label>Hotel Address</label>
+                  <input id="autocomplete" placeholder="Where could we pick you up?"onFocus="geolocate()" type="text"/>
+                </div>
+              </div>
+            </div>
+            <div class="row second">
+              <div class="input-wrap4">
+                <div class="icon-wrap"> 
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"></path>
+                  </svg>
+                </div>
+                <div class="input-field">
+                  <label>Date</label>
+                  <input class="datepicker" type="text" placeholder="mm/dd/yy" />
+                </div>
+              </div>
+              <div class="input-wrap4">
+                <div class="icon-wrap">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"></path>
+                  </svg>
+                </div>
+                <div id="sample1" class="input-field" >
+                  <label>Time</label>
+                  <input name="s1Time2" value="" />
+                </div>
+              </div>
+              <div class="input-wrap4">
+                <div class="icon-wrap">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
+                  </svg>
+                </div>
+                <div class="input-field">
+                  <label>Adults</label>
+                  <div class="input-select">
+                    <select data-trigger="" name="choices-single-defaul" id="noAdult" onchange="CalTotalPrice()">
+                      <option value="0">0 adults</option>
+                      <option value="1">1 adults</option>
+                      <option value="2">2 adults</option>
+                      <option value="3">3 adults</option>
+                      <option value="4">4 adults</option>
+                      <option value="5">5 adults</option>
+                      <option value="6">6 adults</option>
+                      <option value="7">7 adults</option>
+                      <option value="8">8 adults</option>
+                      <option value="9">9 adults</option>
+                      <option>Contact for more</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="input-wrap4">
+                <div class="icon-wrap">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
+                  </svg>
+                </div>
+                <div class="input-field">
+                  <label>Children (<8)</label>
+                  <div class="input-select">
+                    <select data-trigger="" name="choices-single-defaul" id="noChild" onchange="CalTotalPrice()">
+                      <option value="0">0 children</option>
+                      <option value="1">1 children</option>
+                      <option value="2">2 children</option>
+                      <option value="3">3 children</option>
+                      <option value="4">4 children</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div style="font-size: medium; color: rgb(251, 251, 251); font-weight:1000;margin-bottom: 1%;">Contact</div>
+
+            <div class="row second">
+              <div class="input-wrap4">
+                <div class="icon-wrap">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
+                  </svg>
+                </div>
+                <div class="input-field">
+                  <label>Full name</label>
+                  <input type="text" placeholder="" />
+                </div>
+              </div>
+              
+              <div class="input-wrap4">
+                <div class="icon-wrap">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
+                  </svg>
+                </div>
+                <div class="input-field">
+                  <label>Phone number</label>
+                  <input type="text" placeholder="" />
+                </div>
+              </div>
+              <div class="input-wrap4">
+                <div class="icon-wrap">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
+                  </svg>
+                </div>
+                <div class="input-field">
+                  <label>Email</label>
+                  <input type="email" placeholder="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
+                </div>
+              </div>
+              <div class="input-wrap4">
+                <div class="icon-wrap">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
+                  </svg>
+                </div>
+                <div class="input-field">
+                  <label>Nation</label>
+                  <div class="input-select">
+                    <select data-trigger="" name="choices-single-defaul">
+                      <option placeholder="">Language</option>
+                      <option value="English">English</option>
+                      <option value="Russian">Russian</option>
+                      <option value="Chinese">Chinese</option>
+                      <option value="Spanish">Spanish</option>
+                      <option value="Korean">Korean</option>
+                      <option value="Japanese">Japanese</option>
+                      <option value="French">French</option>  
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="input-wrap">
+                <div class="icon-wrap">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path>
+                  </svg>
+                </div>
+                <div class="input-field">
+                  <label>Special request</label>
+                  <input type="text" placeholder="Food Allergy / Children / Tour video ?" />
+                </div>
+              </div>
+            </div>
+            <div style="font-size: medium; color: rgb(255, 255, 255); font-weight:1000; margin-bottom: 0.1%;">Payment</div>
+
+            <div class="row third">
+              <div class="input-radio-group">
+                <div class="input-radio">
+                  <input id="yes" type="radio" name="customer" value="yes" checked="checked" />
+                  <label for="yes">In Tour</label>
+                </div>
+                <a href="https://www.visa.com.vn/en_VN/pay-with-visa/visa-checkout.html">
+                <img src="../static/images/pay.png" width="10%" height="auto" style="position: relative;top: 10px;">
+                </a>
+                <div class="input-radio">
+                  <input id="no" type="radio" name="customer" value="no" />
+                  <label for="no">Pay Online</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row last">
+              <button class="btn-search" type="button" style="background: honeydew; color: #ff8300" id="PRICE">49$</button>
+              <button class="btn-search" type="button" >BOOK IT</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!--Script for picking time and date-->
+    <script src="../static/js/extention/choices.js"></script>
+    <script>
+      const choices = new Choices('[data-trigger]',
+      {
+        searchEnabled: false,
+        itemSelectText: '',
+      });
+
+    </script>
+    <script src="../static/js/extention/flatpickr.js"></script>
+    <script>
+      flatpickr(".datepicker",
+      {
+        dateFormat: "m/d/y"
+      });
+      var btnTypes = document.querySelectorAll('.travel-type-wrap .item')
+      for (let i = 0; i < btnTypes.length; i++)
+      {
+        btnTypes[i].addEventListener('click', function()
+        {
+          for (let i = 0; i < btnTypes.length; i++)
+          {
+            btnTypes[i].classList.remove('active')
+          }
+          btnTypes[i].classList.add('active')
+        })
+      }
+
+    </script>
+    
+    <script type="text/javascript">
+      $(document).ready(function(){
+          // find the input fields and apply the time select to them.
+          $('#sample1 input').ptTimeSelect();
+      });
+    </script>
+
+
+  <!--Script for Calculate the price-->
+  <script>
+    function CalTotalPrice() {
+      var rateForChild = 2;
+      var numberAdults = document.getElementById("noAdult").value;
+      var numberChildren = document.getElementById("noChild").value;
+      var tour = BasicPrice;
+      //document.getElementById("PRICE").innerHTML = tour*x;
+      if (TourType != null) {
+        if (TourType == 1)
+        {
+            document.getElementById("PRICE").innerText = tour + "$";
+        }
+        else {
+            tour = numberAdults * BasicPrice + numberChildren*(BasicPrice/rateForChild)
+            document.getElementById("PRICE").innerText = tour + "$";
+        }
+      }
+      else {
+        tour = numberAdults * BasicPrice + numberChildren*(BasicPrice/rateForChild)
+        document.getElementById("PRICE").innerText = tour + "$";
+        }
+    }
+  </script>
+  
+  <!--Script for getting GET request in url-->
+  <script type="text/javascript">
+  var getUrlParameter = function getUrlParameter(sParam) {
+      var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+          sURLVariables = sPageURL.split('&'),
+          sParameterName,
+          i;
+      for (i = 0; i < sURLVariables.length; i++) {
+          sParameterName = sURLVariables[i].split('=');
+          if (sParameterName[0] === sParam) {
+              return sParameterName[1] === undefined ? true : sParameterName[1];
+          }
+      }
+  };
+  var TourID = getUrlParameter('tourid');
+  var TourType = getUrlParameter('type');
+  var BasicPrice = 0;
+  
+  document.getElementById('PRICE').innerText = BasicPrice + "$";
+  if (TourID != null) {
+      if (TourID == 12)
+      {
+      document.getElementById('TOUR').innerText = "Sightseeing Tour";
+      BasicPrice = 49;
+      }
+      if (TourID == 11)
+      {
+      document.getElementById('TOUR').innerText = "Food Tour";
+      BasicPrice = 29;
+      }
+  }
+  else {
+    document.getElementById('TOUR').innerText = "Sightseeing Tour";
+    BasicPrice = 39;
+  }
+  
+  </script>
+
+
+<!--Script for choose Hotel Address-->
+<script>
+  var autocomplete;
+  function initAutocomplete() {
+  autocomplete = new google.maps.places.Autocomplete(
+      document.getElementById('autocomplete'), {types: ['geocode']});
+  autocomplete.setFields(['address_component']);
+  }
+  function geolocate() {
+  if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+      var geolocation = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+      };
+      var circle = new google.maps.Circle(
+          {center: geolocation, radius: position.coords.accuracy});
+      autocomplete.setBounds(circle.getBounds());
+      });
+  }
+  }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHY7PKzeeDYORHDcbzko4PKgn0CixwE_Q&libraries=places&callback=initAutocomplete" async defer></script>
+
+
+  </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+
+
+
+
+
+<!--PHP code in function.php CF7
+add_action( 'init', 'myplugin_wpcf7_add_shortcode', 5 );
+function myplugin_wpcf7_add_shortcode() {
+    wpcf7_add_shortcode('amount', 'amount', true);
+}
+function amount() {
+    $var=$_GET['type'];
+    $html='<input type="text" id="number" onkeyup="myFunction()">';
+    return $html;
+}
+-->
