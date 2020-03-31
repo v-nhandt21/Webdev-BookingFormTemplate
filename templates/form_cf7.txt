@@ -1,0 +1,92 @@
+<fieldset><legend id="TOUR" style="color: #e5ff00; font-family: Lucida Handwriting; font-weight: bolder; font-size: xx-large;" align="center">SIGHTSEEING TOUR</legend></fieldset>
+<div class="inner-form">
+<div id="main-form" class="main-form">
+<div class="row">
+<div class="input-wrap">
+<div class="icon-wrap"></div>
+<div id="locationField" class="input-field"><label>Hotel Address</label> <input id="autocomplete" name="hotel_address" type="text" placeholder="Where could we pick you up?" /></div>
+</div>
+</div>
+<div class="row second">
+<div class="input-wrap4">
+<div class="icon-wrap"></div>
+<div class="input-field"><label>Date</label> <input class="datepicker" name="date" type="text" placeholder="mm/dd/yy" /></div>
+</div>
+<div class="input-wrap4">
+<div class="icon-wrap"></div>
+<div id="sample1" class="input-field"><label>Time</label> <input name="s1Time2" type="text" /></div>
+</div>
+<div class="input-wrap4">
+<div class="icon-wrap"></div>
+<div class="input-field"><label>Adults</label><span class="input-select"><select id="noAdult" name="number_adults" onchange="CalTotalPrice()" data-trigger="">
+<option value="0">0 adults</option>
+<option value="1">1 adults</option>
+<option value="2">2 adults</option>
+<option value="3">3 adults</option>
+<option value="4">4 adults</option>
+<option value="5">5 adults</option>
+<option value="6">6 adults</option>
+<option value="7">7 adults</option>
+<option value="8">8 adults</option>
+<option value="9">9 adults</option>
+<option>Contact for more</option>
+</select></span>
+</div>
+</div>
+<div class="input-wrap4">
+<div class="icon-wrap"></div>
+<div class="input-field"><label>Children ( &lt;8)</label><span class="input-select"><select id="noChild" name="number_children" onchange="CalTotalPrice()" data-trigger="">
+<option value="0">0 children</option>
+<option value="1">1 children</option>
+<option value="2">2 children</option>
+<option value="3">3 children</option>
+<option value="4">4 children</option>
+</select></span>
+</div>
+</div>
+</div>
+<div style="font-size: medium; color: #fbfbfb; font-weight: 1000; margin-bottom: 1%;">Contact</div>
+<div class="row second">
+<div class="input-wrap4">
+<div class="icon-wrap"></div>
+<div class="input-field"><label>Full name</label> <input name="Full_name" type="text" placeholder="" /></div>
+</div>
+<div class="input-wrap4">
+<div class="icon-wrap"></div>
+<div class="input-field"><label>Phone number</label> <input name="Phone" type="text" placeholder="" /></div>
+</div>
+<div class="input-wrap4">
+<div class="icon-wrap"></div>
+<div class="input-field"><label>Email</label> <input name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$" type="email" placeholder="" /></div>
+</div>
+<div class="input-wrap4">
+<div class="icon-wrap"></div>
+<div class="input-field"><label>Nation</label><span class="input-select"><select name="nation" data-trigger="">
+<option>Language</option>
+<option value="English">English</option>
+<option value="Russian">Russian</option>
+<option value="Chinese">Chinese</option>
+<option value="Spanish">Spanish</option>
+<option value="Korean">Korean</option>
+<option value="Japanese">Japanese</option>
+<option value="French">French</option>
+</select></span>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="input-wrap">
+<div class="icon-wrap"></div>
+<div class="input-field"><label>Special request</label> <input name="Special" type="text" placeholder="Food Allergy / Children / Tour video ?" /></div>
+</div>
+</div>
+<div style="font-size: medium; color: #ffffff; font-weight: 1000; margin-bottom: 0.1%;">Payment</div>
+<div class="row third">
+<div class="input-radio-group">
+<span class="input-radio"><input id="yes" checked="checked" name="payment" type="radio" value="In Tour" /> <label for="yes">In Tour</label></span><span><a href="https://www.visa.com.vn/en_VN/pay-with-visa/visa-checkout.html"><img style="position:relative;top:10px;"src="https://bietduocthuoc.com/wp-content/uploads/2020/03/pay.png" width="10%" height="auto"/></a></span><span class="input-radio"><input id="no" name="payment" type="radio" value="Pay Online" /> <label for="no">Pay Online</label></div>
+</span>
+</div>
+<input type="hidden" name="tour_name" id="tour_name">
+<div class="row last"><button id="PRICE" class="btn-search" style="background: honeydew; color: #ff8300;" type="button">49$</button> <input class="btn-search" type="submit" value="BOOK IT" /></div>
+</div>
+</div>
