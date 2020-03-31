@@ -12,7 +12,7 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/themes/redmond/jquery-ui.css" />
     <link rel="stylesheet" type="text/css" href="../static/js/time/jquery.ptTimeSelect.css" />
-
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.3/flatpickr.min.css"/>
     <!--Script for picking time-->
     <script type="text/javascript" src="../static/js/time/jquery.ptTimeSelect.js"></script>
   </head>
@@ -52,7 +52,7 @@
                 </div>
                 <div class="input-field" id="locationField">
                   <label>Hotel Address</label>
-                  <input id="autocomplete" placeholder="Where could we pick you up?"onFocus="geolocate()" type="text"/>
+                  <input id="autocomplete" placeholder="Where could we pick you up?"onFocus="geolocate()" type="text" name="hotel_address"/>
                 </div>
               </div>
             </div>
@@ -65,7 +65,7 @@
                 </div>
                 <div class="input-field">
                   <label>Date</label>
-                  <input class="datepicker" type="text" placeholder="mm/dd/yy" />
+                  <input class="datepicker" type="text" placeholder="mm/dd/yy" name="date" />
                 </div>
               </div>
               <div class="input-wrap4">
@@ -76,7 +76,7 @@
                 </div>
                 <div id="sample1" class="input-field" >
                   <label>Time</label>
-                  <input name="s1Time2" value="" />
+                  <input name="s1Time2" name="time"/>
                 </div>
               </div>
               <div class="input-wrap4">
@@ -88,7 +88,7 @@
                 <div class="input-field">
                   <label>Adults</label>
                   <div class="input-select">
-                    <select data-trigger="" name="choices-single-defaul" id="noAdult" onchange="CalTotalPrice()">
+                    <select data-trigger="" name="number_adults" id="noAdult" onchange="CalTotalPrice()">
                       <option value="0">0 adults</option>
                       <option value="1">1 adults</option>
                       <option value="2">2 adults</option>
@@ -113,7 +113,7 @@
                 <div class="input-field">
                   <label>Children (<8)</label>
                   <div class="input-select">
-                    <select data-trigger="" name="choices-single-defaul" id="noChild" onchange="CalTotalPrice()">
+                    <select data-trigger="" name="number_children" id="noChild" onchange="CalTotalPrice()">
                       <option value="0">0 children</option>
                       <option value="1">1 children</option>
                       <option value="2">2 children</option>
@@ -136,7 +136,7 @@
                 </div>
                 <div class="input-field">
                   <label>Full name</label>
-                  <input type="text" placeholder="" />
+                  <input type="text" placeholder="" name="Full_name"/>
                 </div>
               </div>
               
@@ -148,7 +148,7 @@
                 </div>
                 <div class="input-field">
                   <label>Phone number</label>
-                  <input type="text" placeholder="" />
+                  <input type="text" placeholder=""  name="Phone"/>
                 </div>
               </div>
               <div class="input-wrap4">
@@ -159,7 +159,7 @@
                 </div>
                 <div class="input-field">
                   <label>Email</label>
-                  <input type="email" placeholder="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
+                  <input type="email" placeholder="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="Email"/>
                 </div>
               </div>
               <div class="input-wrap4">
@@ -171,7 +171,7 @@
                 <div class="input-field">
                   <label>Nation</label>
                   <div class="input-select">
-                    <select data-trigger="" name="choices-single-defaul">
+                    <select data-trigger="" name="nation">
                       <option placeholder="">Language</option>
                       <option value="English">English</option>
                       <option value="Russian">Russian</option>
@@ -195,7 +195,7 @@
                 </div>
                 <div class="input-field">
                   <label>Special request</label>
-                  <input type="text" placeholder="Food Allergy / Children / Tour video ?" />
+                  <input type="text" placeholder="Food Allergy / Children / Tour video ?" name="Special"/>
                 </div>
               </div>
             </div>
@@ -204,14 +204,14 @@
             <div class="row third">
               <div class="input-radio-group">
                 <div class="input-radio">
-                  <input id="yes" type="radio" name="customer" value="yes" checked="checked" />
+                  <input id="yes" type="radio" name="payment" value="In Tour" checked="checked" />
                   <label for="yes">In Tour</label>
                 </div>
                 <a href="https://www.visa.com.vn/en_VN/pay-with-visa/visa-checkout.html">
                 <img src="../static/images/pay.png" width="10%" height="auto" style="position: relative;top: 10px;">
                 </a>
                 <div class="input-radio">
-                  <input id="no" type="radio" name="customer" value="no" />
+                  <input id="no" type="radio" name="payment" value="Pay Online" />
                   <label for="no">Pay Online</label>
                 </div>
               </div>
@@ -219,7 +219,7 @@
 
             <div class="row last">
               <button class="btn-search" type="button" style="background: honeydew; color: #ff8300" id="PRICE">49$</button>
-              <button class="btn-search" type="button" >BOOK IT</button>
+              <input class="btn-search" type="submit" value="BOOK IT">
             </div>
           </div>
         </div>
@@ -228,6 +228,7 @@
 
     <!--Script for picking time and date-->
     <script src="../static/js/extention/choices.js"></script>
+    
     <script>
       const choices = new Choices('[data-trigger]',
       {
@@ -236,7 +237,7 @@
       });
 
     </script>
-    <script src="../static/js/extention/flatpickr.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.3/flatpickr.min.js"></script>
     <script>
       flatpickr(".datepicker",
       {
